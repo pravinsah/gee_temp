@@ -1,0 +1,69 @@
+<div class="row">  
+    <div class="form-group">
+        <label class="col-sm-12 control-label">Add a Temperature</label>
+        <div class="col-sm-3">              
+          <div class="input-group m-b">
+            <input type="number" id="census" class="form-control" [(ngModel)]="celsius">
+            <span class="input-group-addon">&deg;C</span>
+          </div>                        
+        </div>
+        <div class="col-sm-4">
+           <button class="btn btn-success" [disabled]="!celsius" (click)="onAddTemperature()">Add</button>
+        </div>
+    </div>  
+</div>
+<br/>
+<hr/>
+
+<div class="row">
+  <div class="col-sm-12">
+    <!-- List Temperature -->
+    <div class="col-sm-6">
+      <h3>Temperature Listing</h3>
+      <table class="table table-striped">
+          <tbody>
+              <tr *ngFor="let temperature of temperatures">
+                <td>{{convertTocelsius(temperature.temp) | number:'1.0-0'}} <span>&deg;C</span></td><td>{{temperature.date | date }}</td>
+              </tr>                           
+            </tbody>
+      </table>
+    </div>
+    <div class="col-sm-1"></div>
+
+    <div class="col-sm-5">
+        <h3>Important Values</h3>
+        <div class="col-sm-12">
+          <div class="row">
+            <div class="btn-group" role="group">
+              <button type="button" class="btn btn-success">Average</button>
+              <button type="button" class="btn btn-lightgreen">{{getAverageTemperature() | number:'1.0-0'}}<span>&deg;C</span></button>
+            </div>
+          </div>
+          <br/>
+          <div class="row">
+            <div class="btn-group" role="group">
+              <button type="button" class="btn btn-success">Median</button>
+              <button type="button" class="btn btn-lightgreen">{{getMedianTemperature() | number:'1.0-0'}}<span>&deg;C</span></button>
+            </div>
+          </div>
+          <br/>
+          <div class="row">
+            <div class="btn-group" role="group">
+              <button type="button" class="btn btn-success">Max</button>
+              <button type="button" class="btn btn-lightgreen">{{getMaxTemperature() | number:'1.0-0'}}<span>&deg;C</span></button>
+            </div>
+          </div>
+          <br/>
+          <div class="row">
+            <div class="btn-group" role="group">
+              <button type="button" class="btn btn-success">Min</button>
+              <button type="button" class="btn btn-lightgreen">{{getMinTemperature() | number:'1.0-0'}}<span>&deg;C</span></button>
+            </div>
+          </div>           
+        </div>
+
+    </div>
+
+  </div>
+</div>
+  

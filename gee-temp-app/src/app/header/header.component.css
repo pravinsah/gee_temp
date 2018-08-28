@@ -1,0 +1,10 @@
+.header-bar{
+    background-color:#7AB7E6;    
+}
+img {float: left;padding-top:15px;height:55px;}
+h1{
+    position: relative;    
+    left: 10px;
+    color: white;
+    font-size:25px;
+}
