@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { TemperatureService } from './temperature.service';
+
 @Component({
   selector: 'app-temperature',
   templateUrl: './temperature.component.html',
@@ -13,12 +15,22 @@ export class TemperatureComponent implements OnInit {
   ];
   
   celsius : string;
-  constructor(){}
 
-  ngOnInit() {}
+  constructor(private  apiService:  TemperatureService) { }
+
+  ngOnInit() {
+    this.getYahooData();
+  }
+
+  public getYahooData(){
+    this.apiService.getTemperatureData().subscribe((data:  Array<object>) => {
+        console.log("Yahoo Data is ");  
+        console.log(data);
+    });
+  }
   
   convertTofahrenheit(temperature){
-    if(temperature!="")return  (temperature * 1.8) + 32;
+    if(temperature!="")return (temperature * 1.8) + 32;
   }
   convertTocelsius(temperature){
     if(temperature!="")return (temperature - 32) * .5556;
