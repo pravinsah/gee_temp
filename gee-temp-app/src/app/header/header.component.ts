@@ -10,7 +10,7 @@ export class HeaderComponent implements OnInit {
   logoImagePath: string;  
 
   constructor() {
-    this.logoImagePath = "assets/images/global_eagle_white.png";
+    this.logoImagePath = "assets/images/global_eagle_white.svg";//"assets/images/global_eagle_white.svg";
    }
 
   ngOnInit() {
