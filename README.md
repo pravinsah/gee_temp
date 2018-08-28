@@ -1,5 +1,7 @@
 # gee_temp
-sample to display json data in Angular 6
+It has been developed in Angular 6 
+
+Currently it is using Array Object to list the data.
 
 Project Setup :
 1. install nodeJs 8+ 
@@ -9,4 +11,5 @@ I have used bootstrap3 for desiging templates, please install
 4. npm install -save bootstrap@3
 5. replace src folder available at : https://github.com/pravinsah/gee_temp/tree/master/gee-temp-app/src 
 6. replace "angular.json" - changes made to used bootstrap css
+
 
