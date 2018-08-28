@@ -8,9 +8,13 @@ import { TemperatureService } from './temperature.service';
 })
 
 export class TemperatureComponent implements OnInit {  
-  temperatures: any[] = [
-    {"temp": "61","date": "Tue, 14 Aug 2018 04:00 AM EDT"}    
-  ];
+ /* temperatures: any[] = [
+    {"temp": "61","date": "Tue, 14 Aug 2018 04:00 AM EDT"},
+    {"temp": "72","date": "Tue, 18 Aug 2018 04:00 AM EDT"},
+    {"temp": "88","date": "Tue, 26 Aug 2018 04:00 AM EDT"}    
+  ];*/
+
+  temperatures: any[] = [];
   
   celsius : string;
 
