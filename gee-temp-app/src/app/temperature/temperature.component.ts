@@ -9,8 +9,6 @@ import { TemperatureService } from './temperature.service';
 
 export class TemperatureComponent implements OnInit {  
   temperatures: any[] = [
-    {"temp": "71","date": "Tue, 10 Aug 2018 04:00 AM EDT"},
-    {"temp": "82","date": "Tue, 14 Aug 2018 04:00 AM EDT"} ,
     {"temp": "61","date": "Tue, 14 Aug 2018 04:00 AM EDT"}    
   ];
   
@@ -24,8 +22,9 @@ export class TemperatureComponent implements OnInit {
 
   public getYahooData(){
     this.apiService.getTemperatureData().subscribe((data:  Array<object>) => {
-        console.log("Yahoo Data is ");  
-        console.log(data);
+       let f =  data["query"]["results"]["channel"]["item"]["condition"]["temp"];
+       let dt = data["query"]["results"]["channel"]["item"]["condition"]["date"];
+       this.temperatures.push({"temp":f,"date":dt});
     });
   }
   
